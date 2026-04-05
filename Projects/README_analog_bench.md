@@ -28,21 +28,21 @@ This project documents hands-on analog circuit implementation and measurement wo
 ### Oscilloscope Measurements
 Waveforms were captured using the Tektronix MDO3024 Mixed Domain Oscilloscope at 250MS/s. The function generator was configured to drive the circuit under test, with multiple channels monitored simultaneously to observe signal behavior across different circuit nodes.
 
-![Oscilloscope Setup](./images/oscilloscope.jpg)
+![Oscilloscope Setup](./images/IMG_3942.jpeg)
 
 ---
 
 ### Circuit Implementation
 Multiple analog circuits were constructed on the Proto-Board PB-503, utilizing the onboard DIP switches, potentiometers, SPDT switches, and debounced pushbuttons for input control. Logic indicators were used to verify digital output states where applicable.
 
-![Full Bench Setup](./images/bench_setup.jpg)
+![Full Bench Setup](./images/IMG_4048.jepg)
 
 ---
 
 ### Multi-IC Breadboard Circuit
 A more complex analog circuit was implemented using multiple ICs wired across the breadboard. Color-coded jumper wires were used to organize signal paths, power rails, and ground connections for clarity during testing and debugging.
 
-![Breadboard Circuit](./images/breadboard_analog.jpg)
+![Breadboard Circuit](./images/IMG_2634.jpeg)
 
 ---
 
