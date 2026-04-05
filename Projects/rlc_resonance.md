@@ -19,7 +19,7 @@ The series RLC circuit was configured with the following components:
 |-----------|-------------|----------------|
 | Capacitor (C1) | 1µF | 0.01µF |
 | Inductor (L1) | 230µH | 100mH |
-| Resistor | — | 7kΩ |
+| Resistor | 100Ω | 1kΩ |
 | Source Voltage | 1Vpp AC | 2.10V AC |
 | Frequency | 1kHz | 1kHz |
 | Offset | 0V | 0V |
