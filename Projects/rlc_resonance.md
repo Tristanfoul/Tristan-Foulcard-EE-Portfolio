@@ -1,4 +1,4 @@
-# RC Resonance Circuit — PSpice & Multisim Simulation
+# RLC Resonance Circuit — PSpice & Multisim Simulation
 
 **Course:** Circuit Analysis  
 **Tools:** OrCAD PSpice, Multisim, Tektronix MDO3024 Oscilloscope, Agilent 33220A Function Generator
