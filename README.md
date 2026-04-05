@@ -1,4 +1,4 @@
-Tristan Foulcard — Electrical Engineering Portfolio
+we Tristan Foulcard — Electrical Engineering Portfolio
 EE student skilled in VHDL, FPGA design, and circuit simulation. Experienced with Quartus II, Or CAD/PSpice, and hands-on IC implementation. Passionate about hardware design from logic gates to programmable devices.
 
 📁 Projects
@@ -45,7 +45,7 @@ Used Agilent function generator and precision multimeter for measurements
 Tools: Proto-Board PB-503, Tektronix MDO3024, Agilent 33220A, Agilent 34405A
 
 
-5. [Binary adder Schematic](Projects/adder_projects.md)
+5. 👾 [Binary adder Schematic](Projects/adder_projects.md)
 
 Designed and verified 4-bit and 8-bit binary adders using schematic entry in Quartus II
 
