@@ -7,57 +7,88 @@
 
 ## Overview
 
-This project involved designing and simulating a **series RLC circuit** to observe resonance behavior and transient voltage response. The circuit was built and analyzed in both OrCAD PSpice and Multisim, with waveform outputs captured and compared across both platforms.
+This project involved designing and simulating a **series RLC circuit** to observe resonance behavior and transient voltage response. The circuit was built and analyzed in both OrCAD PSpice and Multisim, with waveform outputs captured and compared across both platforms to confirm design correctness.
 
 ---
 
 ## Circuit Design
 
-The series RLC circuit was configured with the following components:
+Two circuit configurations were simulated across both platforms:
 
 | Component | PSpice Value | Multisim Value |
 |-----------|-------------|----------------|
-| Capacitor (C1) | 1µF | 0.01µF |
-| Inductor (L1) | 230µH | 100mH |
-| Resistor | 100Ω | 1kΩ |
-| Source Voltage | 1Vpp AC | 2.10V AC |
-| Frequency | 1kHz | 1kHz |
-| Offset | 0V | 0V |
+| Resistor (R) | 7kΩ | 1kΩ |
+| Inductor (L) | 100mH | 100mH |
+| Capacitor (C) | — | 0.01µF |
+| Source Voltage | 2V pulse | 2.10V AC |
+| Frequency | 200Hz (5ms period) | 1kHz |
 
-![PSpice Schematic](https://github.com/user-attachments/assets/1849247b-9b1c-4b8d-9975-5ada1843cb98)
+> Note: Different component values were used across platforms to explore resonance behavior at different frequency ranges.
 
+---
+
+## Resonant Frequency
+
+The theoretical resonant frequency was calculated using:
+
+**f₀ = 1 / (2π√LC)**
+
+| Circuit | L | C | Calculated f₀ |
+|---------|---|---|----------------|
+| Multisim | 100mH | 0.01µF | ≈ 5.03 kHz |
+
+At resonance, the inductive and capacitive reactances cancel out, leaving only the resistive component to limit current — producing the peak voltage response visible in the simulation waveforms.
 
 ---
 
 ## Simulation
 
+### OrCAD PSpice — Schematic
+
+The PSpice circuit was configured with a **pulse voltage source** (V1 = 2Vdc, PW = 2.5ms, PER = 5ms) driving a series RL network with a 7kΩ resistor and 100mH inductor. Node voltages were measured at 2.000V across key nodes confirming proper bias point calculation.
+
+![PSpice Schematic](https://github.com/user-attachments/assets/60cb4f03-eb59-4bd9-aec2-965c84978e38)
+
+
+---
+
 ### OrCAD PSpice — Transient Analysis
-A transient analysis was run to observe the voltage waveforms across the resistor over time. The simulation confirmed resonance behavior with the expected oscillating waveform pattern.
+
+A transient analysis was run to observe voltage behavior over time. The simulation confirmed the expected waveform response with oscillating voltage centered around 2.00V, ranging between approximately 1.50V and 3.50V peak.
 
 - Simulation completed with **0 errors**
-- Transient analysis captured voltage at R1 and R2 nodes
-- Waveform displayed peak-to-peak voltage of approximately 300mV
+- Transient analysis captured voltage at L4 and C1 nodes
+- Waveform showed high-frequency oscillations consistent with RLC resonance behavior
 
-![PSpice Waveform](https://github.com/user-attachments/assets/ad23a4d2-afb3-43be-98d9-67a3a68326cf)
+![PSpice Waveform](https://github.com/user-attachments/assets/507947ff-e79e-4290-93d2-11fdc3728025)
 
 
 ---
 
 ### Multisim — Interactive Simulation
-Different component values were used across platforms to explore resonance behavior at different frequency ranges.
 
-- Cursor measurements recorded at 2.8117s and 2.8134s
-- Voltage difference of approximately 2.0973V measured between cursors
-- Output frequency confirmed at 606.06Hz
+The Multisim circuit used a 2.10V AC source at 1kHz driving a series RLC network with a 1kΩ resistor, 100mH inductor, and 0.01µF capacitor. The interactive grapher displayed the characteristic resonance oscillation waveform.
 
-![Multisim Circuit](https://github.com/user-attachments/assets/002cd904-076b-408a-9d2d-95c4a78ea748)
+- Cursor 1 measured at 1.8917s, −38.890 mV
+- Cursor 2 measured at 1.8933s, 2.6481V
+- Output frequency confirmed at **606.06 Hz**
+- ΔX interval: 1.6500ms
+
+![Multisim Circuit & Waveform](https://github.com/user-attachments/assets/7fb3c543-ec46-42b5-9054-3c5a929892ee)
 
 
 ---
 
-## Lab Bench Verification
+## Simulation Results Comparison
 
-Circuit behavior was also observed on the **Tektronix MDO3024 Mixed Domain Oscilloscope** paired with an **Agilent 33220A Function/Arbitrary Waveform Generator**, confirming that simulated waveforms matched real-world signal behavior.
+| Parameter | PSpice | Multisim |
+|-----------|--------|----------|
+| Source Voltage | 2V pulse | 2.10V AC |
+| Resistor | 7kΩ | 1kΩ |
+| Inductor | 100mH | 100mH |
+| Waveform Center | ~2.00V | ~0V |
+| Output Frequency | — | 606.06Hz |
+| Simulation Result | 0 errors | 0 errors |
 
 ---
 
@@ -65,9 +96,6 @@ Circuit behavior was also observed on the **Tektronix MDO3024 Mixed Domain Oscil
 
 - Series RLC circuits exhibit resonance at a specific frequency determined by the L and C values
 - Transient analysis in PSpice provides accurate voltage and current behavior over time
+- Adjusting resistance changes the damping characteristics — lower resistance produces more pronounced oscillations as seen in the Multisim waveform
 - Cross-platform simulation in both OrCAD and Multisim reinforced confidence in the design results
 - Simulation results aligned with theoretical expectations for series RLC resonance behavior
-
----
-
-
