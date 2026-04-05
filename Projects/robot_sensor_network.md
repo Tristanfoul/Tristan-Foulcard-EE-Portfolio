@@ -77,14 +77,4 @@ Hardware results matched simulation results across all tested conditions.
 
 ---
 
-## Files
-```
-/
-├── README.md
-├── truth_table.pdf
-├── kmap.pdf
-├── lab_report.pdf
-└── images/
-    ├── breadboard.jpg
-    └── logic_indicators.jpg
-```
+
