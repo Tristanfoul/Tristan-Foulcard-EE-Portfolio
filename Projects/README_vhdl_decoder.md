@@ -38,7 +38,15 @@ Begin
   Y7 <= (I2 AND I1 AND I0);
 END arc;
 ```
+---
 
+## Simulation
+
+Functional simulation was run in Quartus II, generating waveforms for all input/output signals. The simulation confirmed correct one-hot output behavior across all 8 input combinations with **0 errors and 0 warnings**.
+
+![Simulation Waveforms](./images/simulation_waveforms.jpg)
+
+---
 ### How It Works
 Each output `Y0`–`Y7` corresponds to one of the 8 possible 3-bit input combinations. Only the output matching the current binary input is driven high at any given time.
 
